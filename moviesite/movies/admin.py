@@ -1,22 +1,27 @@
 from django.contrib import admin
-from .models import Movie, Director, Actor
+from .models import Movie, Director, Actor, Rating, MovieActor
 
 
-class ChoiceInLine(admin.StackedInline):
+class ActorInLine(admin.TabularInline):
     model = Actor
     extra = 3
 
 
+class MovieActorInLine(admin.TabularInline):
+    model = MovieActor
+
+
 class MovieAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {"fields": ["movie_title", "actors"]}),
+        (None, {"fields": ["movie_title", "rating"]}),
         (
             "Date Watched",
             {"fields": ["date_watched", "director"], "classes": ["collapse"]},
         ),
     ]
-    inLines = [ChoiceInLine]
-    list_display = ("movie_title", "date_watched", "actors")
+
+    inLines = [MovieActorInLine]
+    list_display = ("movie_title", "rating")
 
 
 class ActorAdmin(admin.ModelAdmin):
@@ -28,6 +33,7 @@ class ActorAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-admin.site.register(Movie, MovieAdmin)
 admin.site.register(Director)
-admin.site.register(Actor, ActorAdmin)
+admin.site.register(Actor)
+admin.site.register(Movie, MovieAdmin)
+admin.site.register(Rating)
