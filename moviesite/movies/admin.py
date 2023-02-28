@@ -17,7 +17,10 @@ class MovieAdmin(admin.ModelAdmin):
         (None, {"fields": ["movie_title", "rating", "genre"]}),
         (
             "Date Watched",
-            {"fields": ["date_watched", "director"], "classes": ["collapse"]},
+            {
+                "fields": ["description", "date_watched", "director"],
+                "classes": ["collapse"],
+            },
         ),
     ]
     inlines = [ActorInLine]

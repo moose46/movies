@@ -31,6 +31,7 @@ class Rating(models.Model):
 
 class Movie(models.Model):
     movie_title = models.CharField(max_length=200, blank=False)
+    description = models.TextField(max_length=512)
     date_watched = models.DateTimeField("date watched")
     rating = models.ForeignKey(Rating, on_delete=models.CASCADE, null=True)
     genre = models.ForeignKey(Genres, on_delete=models.CASCADE, null=True)
