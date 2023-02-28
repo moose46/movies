@@ -1,14 +1,10 @@
 from django.contrib import admin
-from .models import Movie, Director, Actor, Rating, MovieActor
+from .models import Movie, Director, Actor, Rating
 
 
 class ActorInLine(admin.TabularInline):
     model = Actor
     extra = 3
-
-
-class MovieActorInLine(admin.TabularInline):
-    model = MovieActor
 
 
 class MovieAdmin(admin.ModelAdmin):
@@ -19,8 +15,7 @@ class MovieAdmin(admin.ModelAdmin):
             {"fields": ["date_watched", "director"], "classes": ["collapse"]},
         ),
     ]
-
-    inLines = [MovieActorInLine]
+    inlines = [ActorInLine]
     list_display = ("movie_title", "rating")
 
 
