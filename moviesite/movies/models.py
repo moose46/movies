@@ -10,7 +10,7 @@ class Director(models.Model):
 
 
 class Genres(models.Model):
-    genre = models.CharField(max_length=32, null=False)
+    genre = models.CharField(max_length=32, null=False, unique=True)
 
     def __str__(self) -> str:
         return self.genre
