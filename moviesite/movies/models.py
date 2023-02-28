@@ -9,6 +9,13 @@ class Director(models.Model):
         return self.director_name
 
 
+class Genres(models.Model):
+    genre = models.CharField(max_length=32, null=False)
+
+    def __str__(self) -> str:
+        return self.genre
+
+
 class Rating(models.Model):
     rating_name = models.CharField(max_length=32, unique=True)
 
@@ -26,6 +33,7 @@ class Movie(models.Model):
     movie_title = models.CharField(max_length=200, blank=False)
     date_watched = models.DateTimeField("date watched")
     rating = models.ForeignKey(Rating, on_delete=models.CASCADE, null=True)
+    genre = models.ForeignKey(Genres, on_delete=models.CASCADE, null=True)
     director = models.ForeignKey(Director, on_delete=models.CASCADE)
     media_name = models.CharField(max_length=32, null=True)
 
