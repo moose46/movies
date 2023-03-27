@@ -1,3 +1,9 @@
 {
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "terminal.integrated.cwd": "moviesite",
+  "python.testing.pytestArgs": [
+    "moviesite"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true
 }

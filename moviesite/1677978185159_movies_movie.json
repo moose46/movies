@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "movie_title": "The Ridiculous 6",
+    "date_watched": "2023-02-26 01:37:15",
+    "media_name": "NULL",
+    "director_id": "1",
+    "rating_id": "3",
+    "genre_id": "1",
+    "description": ""
+  },
+  {
+    "id": "2",
+    "movie_title": "Secrets of Great Britina Castles",
+    "date_watched": "2023-03-01 02:12:43",
+    "media_name": "NULL",
+    "director_id": "1",
+    "rating_id": "1",
+    "genre_id": "5",
+    "description": "All about English castles"
+  },
+  {
+    "id": "3",
+    "movie_title": "Legal Eagles",
+    "date_watched": "2023-03-03 14:34:28",
+    "media_name": "NULL",
+    "director_id": "1",
+    "rating_id": "1",
+    "genre_id": "1",
+    "description": "Dark comedy"
+  }
+]

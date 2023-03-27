@@ -12,6 +12,10 @@ class GenreInLine(admin.TabularInline):
     extra = 0
 
 
+class MovieAdmin2(admin.ModelAdmin):
+    fieldsets = []
+
+
 class MovieAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {"fields": ["movie_title", "rating", "genre"]}),
@@ -38,6 +42,7 @@ class ActorAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Director)
 admin.site.register(Actor)
+# admin.site.register(Movie2)
 admin.site.register(Movie, MovieAdmin)
 admin.site.register(Rating)
 admin.site.register(Genres)

@@ -42,6 +42,10 @@ class Movie(models.Model):
         return self.movie_title
 
 
+# class Movie2(Movie):
+#     pass
+
+
 class Actor(models.Model):
     actor_name = models.CharField(max_length=32, unique=True)
     actors = models.ForeignKey(Movie, on_delete=models.CASCADE)
